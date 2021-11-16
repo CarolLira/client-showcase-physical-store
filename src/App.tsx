@@ -1,19 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import BottomNavigation from './Components/BottomNavigation';
 
 const App = () => {
   return (
-    <View style={styles.default}>
-      <Text>Módulo Loja Física</Text>
-    </View>
+    <>
+      <BottomNavigation />
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   default: {
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    flex: 1,
   },
 });
 
