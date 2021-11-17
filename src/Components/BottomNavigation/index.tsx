@@ -11,6 +11,8 @@ import OnlineStore from '../../Screens/OnlineStore';
 import VisitHistory from '../../Screens/VisitHistory';
 import Wishlist from '../../Screens/Wishlist';
 import Account from '../../Screens/Account';
+import StoreDetails from '../../Screens/PhysicalStore/StoreDetails';
+import AddressesList from '../../Screens/PhysicalStore/AddressesList';
 
 const Tabs = createBottomTabNavigator();
 
@@ -88,6 +90,14 @@ const NavigationTabs = () => {
             )
           }
         }}
+      />
+      <Tabs.Screen
+        name="Detalhes"
+        component={StoreDetails}
+      />
+     <Tabs.Screen
+        name="Endereços"
+        component={AddressesList}
       />
     </Tabs.Navigator>
   );

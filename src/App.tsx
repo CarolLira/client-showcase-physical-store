@@ -1,20 +1,14 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
 import BottomNavigation from './Components/BottomNavigation';
+import store from './Store';
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <BottomNavigation />
-    </>
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  default: {
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-});
 
 export default App;
