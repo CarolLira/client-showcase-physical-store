@@ -5,14 +5,12 @@ import { Image } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import PhysicalStore from '../../Screens/PhysicalStore';
 import ProductsOnOffer from '../../Screens/ProductsOnOffer';
 import OnlineStore from '../../Screens/OnlineStore';
 import VisitHistory from '../../Screens/VisitHistory';
 import Wishlist from '../../Screens/Wishlist';
 import Account from '../../Screens/Account';
-import StoreDetails from '../../Screens/PhysicalStore/StoreDetails';
-import AddressesList from '../../Screens/PhysicalStore/AddressesList';
+import PhysicalStoreStackNavigation from '../PhysicalStoreStackNavigation';
 
 const Tabs = createBottomTabNavigator();
 
@@ -45,7 +43,7 @@ const NavigationTabs = () => {
       />
       <Tabs.Screen
         name="Lojas Físicas"
-        component={PhysicalStore}
+        component={PhysicalStoreStackNavigation}
         options={{
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/lojas-fisicas-focused.png') : require('../../Assets/Images/lojas-fisicas.png');
@@ -90,14 +88,6 @@ const NavigationTabs = () => {
             )
           }
         }}
-      />
-      <Tabs.Screen
-        name="Detalhes"
-        component={StoreDetails}
-      />
-     <Tabs.Screen
-        name="Endereços"
-        component={AddressesList}
       />
     </Tabs.Navigator>
   );

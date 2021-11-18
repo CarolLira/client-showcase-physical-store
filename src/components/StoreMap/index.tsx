@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MapView, { Marker } from "react-native-maps";
-import { storeApi } from "../../services/nominatimApi";
+import { storeApi } from "../../Services/nominatimApi";
 
 import {
     Store,
@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 
-export const StoreMap: React.FC = () => {
+const StoreMap: React.FC = () => {
     const [storeName] = useState('Renner');
     const [userCity] = useState('Cotia');
     const [userState] = useState('São Paulo');
@@ -86,3 +86,5 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 });
+
+export default StoreMap;

@@ -1,13 +1,13 @@
 import React from 'react';
-
-import {View, StyleSheet, ScrollView} from 'react-native';
 import CardStore from '../../Components/CardStore';
 
-const PhysicalStore: React.FC = () => {
+import {View, StyleSheet, ScrollView} from 'react-native';
+
+const PhysicalStore: React.FC = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={styles.default}>
-        <CardStore />
+        <CardStore nav={navigation}/>
       </View>
     </ScrollView>
   );
