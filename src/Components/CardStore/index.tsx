@@ -36,35 +36,35 @@ const CardStore: React.FC = () => {
 
   return (
     <>
-      {store.map(item => (
-        <Card containerStyle={styles.default} key={item.id}>
-          <Card.Title style={styles.labelText}>{item.label}</Card.Title>
-          {item.category.map((option, index) => (
-            <Text key={index} style={styles.categoryText}>{option}</Text>
-          ))}
-          <Card.Image style={styles.imageLogo} source={{ uri: item.logo }} />
-          <View style={styles.boxWrapper}>
-            <TouchableOpacity onPress={() => handleLikeStore()}>
-              {item.favorite ? <Image source={require('../../Assets/Images/like.png')} /> : <Image source={require('../../Assets/Images/dislike.png')} />}
-            </TouchableOpacity>
-            <View style={styles.ratingWrapper}>
-              <Text>{item.rating}</Text>
-              <Image style={styles.ratingStar} source={require('../../Assets/Images/estrela.png')} />
-            </View>
+    {store.map(item => (
+      <Card containerStyle={styles.default} key={item.id}>
+        <Card.Title style={styles.labelText}>{item.label}</Card.Title>
+        {item.category.map ( (option, index) => (
+          <Text key={index} style={styles.categoryText}>{option}</Text>
+        ))}
+        <Card.Image style={styles.imageLogo} source={{uri: item.logo}}/>
+        <View style={styles.boxWrapper}>
+          <TouchableOpacity onPress={() => handleLikeStore()}>
+            {item.favorite ? <Image source={require('../../Assets/Images/like.png')} /> : <Image source={require('../../Assets/Images/dislike.png')} />}
+          </TouchableOpacity>
+          <View style={styles.ratingWrapper}>
+            <Text>{item.rating}</Text>
+            <Image style={styles.ratingStar} source={require('../../Assets/Images/estrela.png')} />
           </View>
-          <Button
-            title='Ver Desconto'
-            type='outline'
-            containerStyle={styles.buttonStyle}
-            onPress={() => handleStoreDetails(item.id, 'Detalhes')}
-            titleStyle={{ color: '#fff', fontWeight: 'bold', fontSize: 12 }}
+        </View> 
+        <Button
+          title='Ver Desconto'
+          type='outline'
+          containerStyle={styles.buttonStyle}
+          onPress={() => handleStoreDetails(item.id, 'Detalhes')} 
+          titleStyle={{color: '#fff', fontWeight: 'bold', fontSize: 12}}
           />
           <Button
             title="Ver no mapa"
             onPress={() => nav.navigate('StoreMap')}
           />
-        </Card>
-      ))}
+      </Card>
+    ))}
     </>
   )
 }
