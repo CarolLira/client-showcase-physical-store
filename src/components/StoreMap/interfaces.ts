@@ -1,11 +1,11 @@
-export interface Localization {
+export interface ILocalization {
     latitude: number;
     longitude: number;
     latitudeDelta: number;
     longitudeDelta: number;
 }
 
-export interface Store {
+export interface IStore {
     display_name: string;
     lat: string;
     lon: string;

@@ -18,9 +18,10 @@ const NavigationTabs = () => {
   return (
     <Tabs.Navigator initialRouteName="Lojas Físicas">
       <Tabs.Screen
-        name="Produtos em Oferta"
+        name="ProductsOnOffer"
         component={ProductsOnOffer}
         options={{
+          title: "Produtos em Oferta",
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/produtos-oferta-focused.png') : require('../../Assets/Images/produtos-oferta.png');
             return (
@@ -30,9 +31,10 @@ const NavigationTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Lojas Online"
+        name="OnlineStore"
         component={OnlineStore}
         options={{
+          title: 'Lojas Online',
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/lojas-online-focused.png') : require('../../Assets/Images/lojas-online.png');
             return (
@@ -42,9 +44,11 @@ const NavigationTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Lojas Físicas"
+        name="PhysicalStoreStackNavigation"
         component={PhysicalStoreStackNavigation}
         options={{
+          title: 'Lojas Físicas',
+          headerShown: false,
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/lojas-fisicas-focused.png') : require('../../Assets/Images/lojas-fisicas.png');
             return (
@@ -54,9 +58,10 @@ const NavigationTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Histórico de Visitas"
+        name="VisitHistory"
         component={VisitHistory}
         options={{
+          title: 'Histórico de Visitas',
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/historico-focused.png') : require('../../Assets/Images/historico.png');
             return (
@@ -66,9 +71,10 @@ const NavigationTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Lista de Desejos"
+        name="Wishlist"
         component={Wishlist}
         options={{
+          title: 'Lista de Desejos',
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/favoritos-focused.png') : require('../../Assets/Images/favoritos.png');
             return (
@@ -78,9 +84,10 @@ const NavigationTabs = () => {
         }}
       />
       <Tabs.Screen
-        name="Conta"
+        name="Account"
         component={Account}
         options={{
+          title: 'Conta',
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/conta-focused.png') : require('../../Assets/Images/conta.png');
             return (

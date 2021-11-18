@@ -3,7 +3,7 @@ import CardStore from '../../Components/CardStore';
 
 import {View, StyleSheet, ScrollView} from 'react-native';
 
-const PhysicalStore: React.FC = ({ navigation }) => {
+const PhysicalStore: React.FC = ({ navigation }: any) => {
   return (
     <ScrollView>
       <View style={styles.default}>

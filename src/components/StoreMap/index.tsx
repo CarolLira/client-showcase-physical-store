@@ -3,31 +3,28 @@ import MapView, { Marker } from "react-native-maps";
 import { storeApi } from "../../Services/nominatimApi";
 
 import {
-    Store,
-    Localization
+    IStore,
+    ILocalization,
 } from "./interfaces";
 
 import {
     SafeAreaView,
     StyleSheet,
-    View
 } from 'react-native';
 
 
-const StoreMap: React.FC = () => {
+const StoreMap = () => {
     const [storeName] = useState('Renner');
-    const [userCity] = useState('Cotia');
     const [userState] = useState('São Paulo');
-    const [userCoutry] = useState('Brazil');
 
-    const [currentLocalization, setCurrentLocalization] = useState<Localization>({
+    const [currentLocalization, setCurrentLocalization] = useState<ILocalization>({
         latitude: -23.609475507346477,
         longitude: -46.93173658848744,
         latitudeDelta: 0.4,
         longitudeDelta: 0.4,
     });
 
-    const [storesList, setStoresList] = useState<Store[]>([]);
+    const [storesList, setStoresList] = useState<IStore[]>([]);
 
     useEffect(() => {
         storeApi.get(`search?q=${storeName}+${userState}&addressdetails=1&limit=15&format=json`)
@@ -35,7 +32,7 @@ const StoreMap: React.FC = () => {
                 setStoresList(response.data);
                 const stores = response.data.slice();
                 console.log(stores);
-                setCurrentLocalization((oldLocalization: Localization) => {
+                setCurrentLocalization((oldLocalization: ILocalization) => {
                     return {
                         latitude: Number(stores[0].lat),
                         longitude: Number(stores[0].lon),
@@ -46,7 +43,7 @@ const StoreMap: React.FC = () => {
             }).catch(error => console.log(error));
     }, []);
 
-    function onRegionChange(region: Localization) {
+    function onRegionChange(region: ILocalization) {
         setCurrentLocalization(region);
     }
 
