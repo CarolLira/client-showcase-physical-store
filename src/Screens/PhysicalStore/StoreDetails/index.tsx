@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import { useNavigation } from '@react-navigation/core';
-import React, {useEffect, useState} from 'react';
-import { Image, StyleSheet, Text, View } from "react-native"
+import React, { useEffect, useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import api from '../../../Services/api';
@@ -11,27 +12,27 @@ const StoreDetails: React.FC = () => {
   const navigate = useNavigation();
   const storeId = useSelector((state: IGlobalStoreId) => state.store_id);
   const [storeData, setStoreData] = useState<IStoreDetails>(
-    {} as IStoreDetails,
+    {} as IStoreDetails
   );
 
   const handleNavigation = (screen: any) => {
     navigate.navigate(screen);
-  }
+  };
 
   useEffect(() => {
     api
       .get(`discounts?store=${storeId}`)
-      .then(response => {
+      .then((response) => {
         if (response.data.length > 0) {
           api
             .get(`stores/${storeId}`)
-            .then(res => {
-              setStoreData({...response.data[0], storeDetails: res.data});
+            .then((res) => {
+              setStoreData({ ...response.data[0], storeDetails: res.data });
             })
-            .catch(e => console.log(e));
+            .catch((e) => console.log(e));
         }
       })
-      .catch(e => console.log(e));
+      .catch((e) => console.log(e));
   }, [storeId]);
 
   const parseDate = (value: Date) => {
@@ -40,27 +41,35 @@ const StoreDetails: React.FC = () => {
 
   return (
     <View style={styles.default}>
-      <Button title="Voltar" onPress={() => {handleNavigation("Lojas Físicas")}}>Voltar</Button>
-      <Text style={styles.mainTitle}>Parabéns! Seu desconto foi gerado com sucesso.</Text>
-      <Text style={styles.discountLabel}>Você tem {storeData.percentage}% OFF para aproveitar em {storeData.storeDetails?.label}</Text>
+      <Text style={styles.mainTitle}>
+        Parabéns! 🎉 Seu desconto foi gerado com sucesso.🤑
+      </Text>
+      <Text style={styles.discountLabel}>
+        Você tem{' '}
+        <Text style={styles.couponDestak}>{storeData.percentage}% OFF</Text>{' '}
+        para aproveitar em {storeData.storeDetails?.label}
+      </Text>
       <Image
-        source={{uri: storeData.storeDetails?.logo}}
+        source={{ uri: storeData.storeDetails?.logo }}
         style={styles.logoStyle}
       />
       <View style={styles.couponDetails}>
-        <Text style={styles.infoDetails}>Código: {storeData?.coupon_code}</Text>
+        <Text style={styles.codeLabel}>Código:</Text>
+        <Text style={styles.codeLabel}>{storeData?.coupon_code}</Text>
         <Text style={styles.infoDetails}>
           Válido até {storeData?.expires_in && parseDate(storeData?.expires_in)}
         </Text>
       </View>
 
       <Button
-        title='Ver Endereços'
-        type='outline'
+        title="Ver Endereços"
+        type="outline"
         containerStyle={styles.buttonStyle}
-        onPress={() => {handleNavigation("Endereços")}} 
-        titleStyle={{color: '#9540BF', fontWeight: 'bold', fontSize: 12}}
-        />
+        onPress={() => {
+          handleNavigation('Endereços');
+        }}
+        titleStyle={{ color: '#9540BF', fontWeight: 'bold', fontSize: 12 }}
+      />
 
       <View style={styles.boxInfo}>
         <Text style={styles.titleTextInfo}>Como usar?</Text>
@@ -69,21 +78,26 @@ const StoreDetails: React.FC = () => {
         <Text>3- Ganhe desconto.</Text>
 
         <Text style={styles.titleTextInfo}>Informações</Text>
-        <Text>- Este cupom é válido até {storeData?.expires_in && parseDate(storeData?.expires_in)};</Text>
-        <Text>- {storeData.percentage}% de desconto em {storeData?.rules};</Text>
+        <Text>
+          - Este cupom é válido até{' '}
+          {storeData?.expires_in && parseDate(storeData?.expires_in)};
+        </Text>
+        <Text>
+          - {storeData.percentage}% de desconto em {storeData?.rules};
+        </Text>
         <Text>- Desconto aplicado somente em uma única compra;</Text>
         <Text>- Consulte lojas participantes;</Text>
         <Text>- Promoção válida apenas em lojas físicas.</Text>
       </View>
     </View>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
   default: {
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1
+    flex: 1,
   },
   mainTitle: {
     fontSize: 24,
@@ -96,6 +110,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  couponDestak: {
+    color: '#fff',
+    backgroundColor: '#000',
+  },
+  codeLabel: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
   couponDetails: {
     borderWidth: 3,
     margin: 10,
@@ -103,7 +125,7 @@ const styles = StyleSheet.create({
     borderStyle: 'dotted',
     borderColor: '#40BF40',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   discountLabel: {
     fontSize: 20,
@@ -124,16 +146,16 @@ const styles = StyleSheet.create({
   buttonStyle: {
     borderColor: '#9540BF',
     borderRadius: 15,
-    borderWidth: 1
+    borderWidth: 1,
   },
   titleTextInfo: {
     fontWeight: 'bold',
-    marginTop: 10
+    marginTop: 10,
   },
   boxInfo: {
     margin: 10,
-    padding: 10
-  }
+    padding: 10,
+  },
 });
 
 export default StoreDetails;

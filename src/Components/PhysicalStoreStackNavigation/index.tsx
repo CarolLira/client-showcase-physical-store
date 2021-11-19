@@ -12,7 +12,7 @@ const NavigationStacks = () => {
     return (
         <Stack.Navigator initialRouteName="PhysicalStore">
             <Stack.Screen
-                name="PhysicalStore"
+                name="Lojas Físicas"
                 component={PhysicalStore}
                 options={{
                     title: 'Lojas Físicas',

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
-import { useNavigation } from "@react-navigation/core";
-import api from "../../../Services/api";
-import { IAdressDetails } from "../../../Types";
-import { useSelector } from "react-redux";
-import { IGlobalStoreId } from "../../../Store/Modules/ListDetails/Types";
+/* eslint-disable react-native/no-inline-styles */
+import React, { useEffect, useState } from 'react';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/core';
+import api from '../../../Services/api';
+import { IAdressDetails } from '../../../Types';
+import { useSelector } from 'react-redux';
+import { IGlobalStoreId } from '../../../Store/Modules/ListDetails/Types';
 
 const AddressesList: React.FC = () => {
   const navigate = useNavigation();
@@ -13,7 +15,7 @@ const AddressesList: React.FC = () => {
 
   const handleNavigation = (screen: any) => {
     navigate.navigate(screen);
-  }
+  };
 
   useEffect(() => {
     api
@@ -32,28 +34,44 @@ const AddressesList: React.FC = () => {
   }, [storeId]);
 
   return (
-    <View style={styles.default}>
-      <Button title="Voltar" onPress={() => {handleNavigation("Detalhes")}}>Voltar</Button>
-      <Text style={styles.mainTitle}>Lista de Endereços</Text>
-      <Text style={styles.mainTitle}>{storeData?.storeDetails.label}</Text>
-      {storeData?.list.map((item, index) => (
-        <View key={index} style={styles.addressWrapper}>
-          <Text>Endereço: {item.street}</Text>
-          <Text>{item.city} - {item.state}</Text>
-          <Text>CEP: {item.zipcode}</Text>
-          <Text>Contato: {item.phone}</Text>
-          <Text>Horário: {item.time.open} - {item.time.close}</Text>
-          <Button title="Mapa">Ver Mapa</Button>
-        </View>
-      ))}
-    </View>
-  )
-}
+    <ScrollView>
+      <View style={styles.default}>
+        <Text style={styles.mainTitle}>{storeData?.storeDetails.label}</Text>
+        <Button
+          title="Ver Mapa"
+          onPress={() => handleNavigation('StoreMap')}
+          type="outline"
+          containerStyle={styles.buttonStyle}
+          titleStyle={{ color: '#9540BF', fontWeight: 'bold', fontSize: 12 }}
+        />
+        {storeData?.list.map((item, index) => (
+          <View key={index} style={styles.addressWrapper}>
+            <Image style={styles.localImg} source={require('../../../Assets/Images/localizacao.png')} />
+            <View style={styles.addressCard}>
+              <Text>{item.street}</Text>
+              <Text>{item.city} - {item.state}</Text>
+              <Text>CEP: {item.zipcode}</Text>
+              <Text>Contato: {item.phone}</Text>
+              <Text>Horário: {item.time.open} - {item.time.close}</Text>
+            </View>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   default: {
     alignItems: 'center',
-    flex: 1
+    flex: 1,
+  },
+  localImg: {
+    width: 30,
+    height: 30,
+  },
+  addressCard: {
+    marginLeft: 10,
   },
   mainTitle: {
     fontSize: 24,
@@ -62,12 +80,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   addressWrapper: {
-    minWidth: 280,
-    maxWidth: 280,
+    minWidth: 300,
+    maxWidth: 300,
     backgroundColor: '#fff',
-    margin: 10,
-    padding: 10
-  }
-})
+    margin: 5,
+    padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  buttonStyle: {
+    borderColor: '#9540BF',
+    borderRadius: 15,
+    borderWidth: 1,
+    marginTop: 10,
+  },
+});
 
 export default AddressesList;

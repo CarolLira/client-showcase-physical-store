@@ -36,3 +36,10 @@ export interface IStoreDetails {
   rules?: string;
   storeDetails: IList;
 }
+
+export interface ILocalization {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+}
