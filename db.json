@@ -1,0 +1,988 @@
+{
+  "stores": [
+    {
+      "id": 1,
+      "label": "Magazine Luiza",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Magalu_-_novo_logo.png",
+      "rating": "4",
+      "favorite": true,
+      "category": [
+        "varejo",
+        "departamento"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Centauro",
+      "logo": "https://logodownload.org/wp-content/uploads/2017/08/centauro-logo.png",
+      "rating": "5",
+      "favorite": false,
+      "category": [
+        "moda",
+        "esporte"
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Marisa",
+      "logo": "https://d3a0dcqzwu0eh0.cloudfront.net/images/350_oglwvjmzcfk1zfpo021p.jpg",
+      "rating": "4",
+      "favorite": true,
+      "category": [
+        "moda",
+        "casa"
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Atacadão",
+      "logo": "https://logodownload.org/wp-content/uploads/2018/06/atacadao-logo.png",
+      "rating": "3",
+      "favorite": false,
+      "category": [
+        "supermercado",
+        "atacado"
+      ]
+    },
+    {
+      "id": 5,
+      "label": "McDonalds",
+      "logo": "https://www.pragmatismopolitico.com.br/wp-content/uploads/2013/01/mcdonalds-denuncia.png",
+      "rating": "5",
+      "favorite": false,
+      "category": [
+        "restaurante",
+        "fast-food"
+      ]
+    },
+    {
+      "id": 6,
+      "label": "Tok&Stok",
+      "logo": "https://scontent.fcgh17-1.fna.fbcdn.net/v/t1.6435-9/106714513_10157857856227545_3048244231003151874_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeEeULK-oeD6V0t8zggmgfS-sFtnl6COifOwW2eXoI6J8_xOxGjIhYLnNR79LO9xlPuwfCAjtx__Y_1uEerSTJ4y&_nc_ohc=ufqNpL1J1PgAX-0Pdmo&_nc_ht=scontent.fcgh17-1.fna&oh=ef1160da349d7a11bf5d9ba3151ecbcf&oe=61BBFA67",
+      "rating": "4",
+      "favorite": true,
+      "category": [
+        "móveis",
+        "decoração"
+      ]
+    },
+    {
+      "id": 7,
+      "label": "Boticário",
+      "logo": "https://logospng.org/wp-content/uploads/boticario.jpg",
+      "rating": "3",
+      "favorite": true,
+      "category": [
+        "beleza",
+        "perfumaria"
+      ]
+    },
+    {
+      "id": 8,
+      "label": "Renner",
+      "logo": "https://logodownload.org/wp-content/uploads/2014/07/renner-logo-0.png",
+      "rating": "4",
+      "favorite": true,
+      "category": [
+        "moda",
+        "beleza"
+      ]
+    },
+    {
+      "id": 9,
+      "label": "Drogasil",
+      "logo": "https://www.oficinasos.com.br/conteudo/uploads/2016/04/logo-Drogasil-mini.jpg",
+      "rating": "4",
+      "favorite": false,
+      "category": [
+        "drogaria",
+        "beleza"
+      ]
+    },
+    {
+      "id": 10,
+      "label": "Outback",
+      "logo": "https://logodownload.org/wp-content/uploads/2016/09/Outback-logo-9.png",
+      "rating": "5",
+      "favorite": false,
+      "category": [
+        "restaurante",
+        "alimentação"
+      ]
+    }
+  ],
+  "discounts": [
+      {
+        "store": 1,
+        "percentage": 14,
+        "expires_in": "12/31/2021",
+        "coupon_code": "99885375676013",
+        "rules": "compras acima de R$100,00"
+      },
+      {
+        "store": 2,
+        "percentage": 20,
+        "expires_in": "12/31/2021",
+        "coupon_code": "95367688019753",
+        "rules": "compras acima de R$80,00"
+      },
+      {
+        "store": 3,
+        "percentage": 10,
+        "expires_in": "07/31/2022",
+        "coupon_code": "67993175885603",
+        "rules": "compras acima de R$50,00"
+      },
+      {
+        "store": 4,
+        "percentage": 12,
+        "expires_in": "06/30/2022",
+        "coupon_code": "57593976088613",
+        "rules": "compras acima de R$120,00"
+      },
+      {
+        "store": 5,
+        "percentage": 18,
+        "expires_in": "01/31/2022",
+        "coupon_code": "96988576037513",
+        "rules": "compras acima de R$20,00"
+      },
+      {
+        "store": 6,
+        "percentage": 5,
+        "expires_in": "01/31/2022",
+        "coupon_code": "53756998876013",
+        "rules": "compras acima de R$200,00"
+      },
+      {
+        "store": 7,
+        "percentage": 10,
+        "expires_in": "04/30/2022",
+        "coupon_code": "60988539756713",
+        "rules": "compras acima de R$50,00"
+      },
+      {
+        "store": 8,
+        "percentage": 10,
+        "expires_in": "04/30/2022",
+        "coupon_code": "559255345256983",
+        "rules": "compras acima de R$70,00"
+      },
+      {
+        "store": 9,
+        "percentage": 3,
+        "expires_in": "05/31/2022",
+        "coupon_code": "559255345256983",
+        "rules": "compras acima de R$80,00"
+      },
+      {
+        "store": 10,
+        "percentage": 8,
+        "expires_in": "12/31/2022",
+        "coupon_code": "559255345256983",
+        "rules": "compras acima de R$100,00"
+      }
+    ],
+    "addresses": [
+      {
+        "store": 1,
+        "list": [
+          {
+            "street": "R. Silva Bueno, 2342",
+            "zipcode": "04208-002",
+            "city": "São Paulo",
+            "state": "SP",
+            "localization": {
+              "lat": -23.599371633852606, 
+              "lng": -46.600732703242016
+            },
+            "phone": "11 2219-8100",
+            "time": {
+              "open": "9am",
+              "close": "20pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Mário Ypiranga",
+            "zipcode": "69057-015",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.10405755,
+              "lng": -60.01128576589144
+            },
+            "phone": "92 3878-6055",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Djalma Batista, 482",
+            "zipcode": "69050-010",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.0940517, 
+              "lng": -60.0223221
+            },
+            "phone": "92 3878-6041",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 2,
+        "list": [
+          {
+            "street": "Av. Mário Ypiranga",
+            "zipcode": "69057-015",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.10405755,
+              "lng": -60.01128576589144
+            },
+            "phone": "92 3878-6055",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Djalma Batista, 482",
+            "zipcode": "69050-010",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.0940517, 
+              "lng": -60.0223221
+            },
+            "phone": "92 3878-6041",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 3,
+        "list": [
+          {
+            "street": "Av. Augusto de Lima, 1684",
+            "zipcode": "30190-003",
+            "city": "Belo Horizonte",
+            "state": "MG",
+            "localization": {
+              "lat": -19.920585953835403, 
+              "lng": -43.9522056318508
+            },
+            "phone": "31 3878-3350",
+            "time": {
+              "open": "9am",
+              "close": "20pm"
+            }
+          },
+          {
+            "street": "Avenida Tancredo Neves, 3133",
+            "zipcode": "41820-021",
+            "city": "Salvador",
+            "state": "BA",
+            "localization": {
+              "lat": -12.97892664459781, 
+              "lng": -38.45763539771058
+            },
+            "phone": "71 3617-4832",
+            "time": {
+              "open": "9am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 4,
+        "list": [
+          {
+            "street": "Rodovia BR 364, KM 5 7081, nº KM 3",
+            "zipcode": "69914-220",
+            "city": "Rio Branco",
+            "state": "AC",
+            "localization": {
+              "lat": -9.974608226166296, 
+              "lng": -67.84890811249187
+            },
+            "phone": "68 3213-7143",
+            "time": {
+              "open": "7am",
+              "close": "23pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 5,
+        "list": [
+          {
+            "street": "R. Trajano, 114",
+            "zipcode": "88010-010",
+            "city": "Florianópolis",
+            "state": "SC",
+            "localization": {
+              "lat": -27.597435566439103, 
+              "lng": -48.55092724469665
+            },
+            "phone": "",
+            "time": {
+              "open": "10am",
+              "close": "19pm"
+            }
+          },
+          {
+            "street": "Av. Jorge Schimmelpfeng, 573",
+            "zipcode": "85851-110",
+            "city": "Foz do Iguaçu",
+            "state": "PR",
+            "localization": {
+              "lat": -25.546479825175865, 
+              "lng": -54.58259172940334
+            },
+            "phone": "",
+            "time": {
+              "open": "7am",
+              "close": "5am"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 6,
+        "list": [
+          {
+            "street": "Av. Nossa Sra. de Copacabana, 1417",
+            "zipcode": "22070-011",
+            "city": "Rio de Janeiro",
+            "state": "RJ",
+            "localization": {
+              "lat": -22.985992853463976, 
+              "lng": -43.18940307179141
+            },
+            "phone": "21 3003-3992",
+            "time": {
+              "open": "9am",
+              "close": "21pm"
+            }
+          },
+          {
+            "street": "Av. Conselheiro Nébias, 697",
+            "zipcode": "11045-003",
+            "city": "Santos",
+            "state": "SP",
+            "localization": {
+              "lat": -23.965038809673228, 
+              "lng": -46.3231506312956
+            },
+            "phone": "13 3003-3992",
+            "time": {
+              "open": "9am",
+              "close": "21am"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 7,
+        "list": [
+          {
+            "street": "Av. Dr. João Medeiros Filho, 2774",
+            "zipcode": "59110-200",
+            "city": "Natal",
+            "state": "RN",
+            "localization": {
+              "lat": -5.658274708206667, 
+              "lng": -36.60971539806325
+            },
+            "phone": "84 3673-5650",
+            "time": {
+              "open": "9am",
+              "close": "18pm"
+            }
+          },
+          {
+            "street": "R. Prof. Pedro Viriato Parigot de Souza, 600",
+            "zipcode": "81200-100",
+            "city": "Curitiba",
+            "state": "PR",
+            "localization": {
+              "lat": -25.43524380612381, 
+              "lng": -49.31575959502853
+            },
+            "phone": "41 98778-3173",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 8,
+        "list": [
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 9,
+        "list": [
+          {
+            "street": "R. Silva Bueno, 2342",
+            "zipcode": "04208-002",
+            "city": "São Paulo",
+            "state": "SP",
+            "localization": {
+              "lat": -23.599371633852606, 
+              "lng": -46.600732703242016
+            },
+            "phone": "11 2219-8100",
+            "time": {
+              "open": "9am",
+              "close": "20pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Mário Ypiranga",
+            "zipcode": "69057-015",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.10405755,
+              "lng": -60.01128576589144
+            },
+            "phone": "92 3878-6055",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Djalma Batista, 482",
+            "zipcode": "69050-010",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.0940517, 
+              "lng": -60.0223221
+            },
+            "phone": "92 3878-6041",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      },
+      {
+        "store": 10,
+        "list": [
+          {
+            "street": "R. Silva Bueno, 2342",
+            "zipcode": "04208-002",
+            "city": "São Paulo",
+            "state": "SP",
+            "localization": {
+              "lat": -23.599371633852606, 
+              "lng": -46.600732703242016
+            },
+            "phone": "11 2219-8100",
+            "time": {
+              "open": "9am",
+              "close": "20pm"
+            }
+          },
+          {
+            "street": "Av. Industrial, 600",
+            "zipcode": "09080-500",
+            "city": "Santo André",
+            "state": "SP",
+            "localization": {
+              "lat": -23.64810343839749,  
+              "lng": -46.5318561448151
+            },
+            "phone": "11 2898-0770",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Alameda Terracota, 545",
+            "zipcode": "09531-190",
+            "city": "São Caetano do Sul",
+            "state": "SP",
+            "localization": {
+              "lat": -23.625452648772544, 
+              "lng": -46.58014030164411 
+            },
+            "phone": "11 2187-0940",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "R. Manoel da Nóbrega, 712",
+            "zipcode": "09910-720",
+            "city": "Diadema",
+            "state": "SP",
+            "localization": {
+              "lat": -23.691394329947276, 
+              "lng": -46.623340160846325
+            },
+            "phone": "11 2526-2350",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Mário Ypiranga",
+            "zipcode": "69057-015",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.10405755,
+              "lng": -60.01128576589144
+            },
+            "phone": "92 3878-6055",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          },
+          {
+            "street": "Av. Djalma Batista, 482",
+            "zipcode": "69050-010",
+            "city": "Manaus",
+            "state": "AM",
+            "localization": {
+              "lat": -3.0940517, 
+              "lng": -60.0223221
+            },
+            "phone": "92 3878-6041",
+            "time": {
+              "open": "10am",
+              "close": "22pm"
+            }
+          }
+        ]
+      }
+    ]
+}
