@@ -8,7 +8,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import { IAdressDetails, ILocalization } from '../../Types';
+import { IAdressDetails, IAdresses, ILocalization } from '../../Types';
 import { useSelector } from 'react-redux';
 import { IGlobalStoreId } from '../../Store/Modules/ListDetails/Types';
 import api from '../../Services/api';
@@ -24,6 +24,7 @@ const StoreMap = () => {
         longitudeDelta: 0.4,
     });
     const [storesList, setStoresList] = useState<IAdressDetails>();
+    const [markerAddress, setMarkerAddress] = useState<IAdresses | undefined>(undefined);
 
     useEffect(() => {
         api
@@ -58,6 +59,10 @@ const StoreMap = () => {
         navigate.navigate(screen);
     };
 
+    const handleMarkerClick = (address: IAdresses | undefined) => {
+        setMarkerAddress(address);
+    }
+
     return (
         <SafeAreaView
             style={styles.container}
@@ -75,6 +80,8 @@ const StoreMap = () => {
                             longitude: marker.localization.lng,
                         }}
                         pinColor="#9540BF"
+                        onSelect={() => handleMarkerClick(marker)}
+                        onDeselect={() => handleMarkerClick(undefined)}
                     >
                         <Callout>
                             <View style={styles.calloutStyle}>
@@ -82,13 +89,20 @@ const StoreMap = () => {
                                 <Image source={{ uri: storesList.storeDetails.logo }} style={styles.logoStyle} />
                                 <TouchableOpacity
                                     onPress={() => handleNavigation('Endereços')}>
-                                    <Text>Saber mais</Text>
                                 </TouchableOpacity>
                             </View>
                         </Callout>
                     </Marker>
                 ))}
             </MapView>
+            {markerAddress &&
+                <View style={styles.addressContainer}>
+                    <Text style={styles.addressTitle}>Endereço</Text>
+                    <Text style={styles.addressText}>{markerAddress.street}</Text>
+                    <Text style={styles.addressText}>{markerAddress.city}</Text>
+                    <Text style={styles.addressText}>CEP: {markerAddress.zipcode}</Text>
+                </View>
+            }
         </SafeAreaView>
     );
 };
@@ -113,6 +127,25 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#9540BF',
     },
+    addressContainer: {
+        display: 'flex',
+        paddingHorizontal: 30,
+        paddingVertical: 20,
+        justifyContent: 'center',
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        backgroundColor: '#fffffff1'
+    },
+    addressTitle: {
+        marginBottom: 15,
+        fontSize: 18,
+        fontWeight: '500'
+    },
+    addressText: {
+        marginBottom: 5,
+        fontSize: 16
+    }
 });
 
 export default StoreMap;
