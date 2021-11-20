@@ -21,13 +21,13 @@ const NavigationTabs = () => {
         name="ProductsOnOffer"
         component={ProductsOnOffer}
         options={{
-          title: "Produtos em Oferta",
+          title: 'Produtos em Oferta',
           tabBarIcon: ({focused}) => {
             const image = focused ? require('../../Assets/Images/produtos-oferta-focused.png') : require('../../Assets/Images/produtos-oferta.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -39,8 +39,8 @@ const NavigationTabs = () => {
             const image = focused ? require('../../Assets/Images/lojas-online-focused.png') : require('../../Assets/Images/lojas-online.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -53,8 +53,8 @@ const NavigationTabs = () => {
             const image = focused ? require('../../Assets/Images/lojas-fisicas-focused.png') : require('../../Assets/Images/lojas-fisicas.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -66,8 +66,8 @@ const NavigationTabs = () => {
             const image = focused ? require('../../Assets/Images/historico-focused.png') : require('../../Assets/Images/historico.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -79,8 +79,8 @@ const NavigationTabs = () => {
             const image = focused ? require('../../Assets/Images/favoritos-focused.png') : require('../../Assets/Images/favoritos.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -92,8 +92,8 @@ const NavigationTabs = () => {
             const image = focused ? require('../../Assets/Images/conta-focused.png') : require('../../Assets/Images/conta.png');
             return (
               <Image source={image} />
-            )
-          }
+            );
+          },
         }}
       />
     </Tabs.Navigator>

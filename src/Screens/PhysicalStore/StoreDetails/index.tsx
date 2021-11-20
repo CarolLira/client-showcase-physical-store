@@ -16,12 +16,14 @@ const StoreDetails: React.FC = () => {
   const [storeData, setStoreData] = useState<IStoreDetails>(
     {} as IStoreDetails
   );
+  const [isLoad, setIsLoad] = useState(false);
 
   const handleNavigation = (screen: any) => {
     navigate.navigate(screen);
   };
 
   useEffect(() => {
+    setIsLoad(true);
     api
       .get(`discounts?store=${storeId}`)
       .then((response) => {
@@ -34,8 +36,21 @@ const StoreDetails: React.FC = () => {
             .catch((e) => console.log(e));
         }
       })
-      .catch((e) => console.log(e));
+      .catch((e) => console.log(e))
+      .finally(() => {
+        setTimeout(() => {
+          setIsLoad(false);
+        }, 1000);
+      });
   }, [storeId]);
+
+  if (isLoad) {
+    return (
+      <View style={styles.default}>
+        <Text>Carregando...</Text>
+      </View>
+    );
+  }
 
   const parseDate = (value: Date) => {
     return Intl.DateTimeFormat('pt-BR').format(new Date(value));
