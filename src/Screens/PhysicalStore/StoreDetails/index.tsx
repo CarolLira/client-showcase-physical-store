@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import api from '../../../Services/api';
 import { IGlobalStoreId } from '../../../Store/Modules/ListDetails/Types';
 import { IStoreDetails } from '../../../Types';
+import 'intl';
+import 'intl/locale-data/jsonp/pt';
 
 const StoreDetails: React.FC = () => {
   const navigate = useNavigation();
