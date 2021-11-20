@@ -1,14 +1,15 @@
 import React from 'react';
 import CardStore from '../../Components/CardStore';
 
-import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 const PhysicalStore: React.FC = () => {
   return (
-      <SafeAreaView style={styles.default}>
+    <ScrollView>
+      <View style={styles.default}>
         <CardStore />
-      </SafeAreaView>
+      </View>
+    </ScrollView>
   );
 };
 
