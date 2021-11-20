@@ -1,22 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Card, Button } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/core';
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import api from '../../Services/api';
 import { IList } from '../../Types';
 import { IGlobalStoreId } from '../../Store/Modules/ListDetails/Types';
 import { setNewStoreID } from '../../Store/Modules/ListDetails/Actions';
 
-interface IProps {
-  data: IList[]
-}
-
-const CardStore: React.FC<IProps> = (props: IProps) => {
+const CardStore: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigation();
 
+  const [store, setStore] = useState<IList[]>([]);
   const [like, setLike] = useState(false);
 
   const handleStoreDetails = (value: number, screen: any) => {
@@ -30,6 +28,12 @@ const CardStore: React.FC<IProps> = (props: IProps) => {
   const handleLikeStore = () => {
     setLike(!like);
   };
+
+  useEffect(() => {
+    api.get('stores').then(response => {
+      setStore(response.data);
+    }).catch(e => console.log(e));
+  }, []);
 
   const Item = ({ item }: { item: IList }) => (
     <Card containerStyle={styles.default} key={item.id}>
@@ -64,7 +68,7 @@ const CardStore: React.FC<IProps> = (props: IProps) => {
 
   return (
     <FlatList
-        data={props.data}
+        data={store}
         renderItem={renderItem}
         numColumns={2}
         keyExtractor={item => item.id.toString()}
