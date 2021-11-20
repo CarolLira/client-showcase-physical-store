@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Card, Button } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/core';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import api from '../../Services/api';
 import { IList } from '../../Types';
@@ -35,34 +35,44 @@ const CardStore: React.FC = () => {
     }).catch(e => console.log(e));
   }, []);
 
-  return (
-    <>
-    {store.map(item => (
-      <Card containerStyle={styles.default} key={item.id}>
-        <Card.Image style={styles.imageLogo} source={{uri: item.logo}}/>
-        <Card.Title style={styles.labelText}>{item.label}</Card.Title>
-        {item.category.map( (option, index) => (
-          <Text key={index} style={styles.categoryText}>{option}</Text>
-        ))}
-        <View style={styles.boxWrapper}>
-          <TouchableOpacity onPress={() => handleLikeStore()}>
-            {item.favorite && !like ? <Image source={require('../../Assets/Images/like.png')} /> : <Image source={require('../../Assets/Images/dislike.png')} />}
-          </TouchableOpacity>
-          <View style={styles.ratingWrapper}>
-            <Text>{item.rating}</Text>
-            <Image style={styles.ratingStar} source={require('../../Assets/Images/estrela.png')} />
-          </View>
+  const Item = ({ item }: { item: IList }) => (
+    <Card containerStyle={styles.default} key={item.id}>
+      <Card.Image style={styles.imageLogo} source={{uri: item.logo}}/>
+      <Card.Title style={styles.labelText}>{item.label}</Card.Title>
+      {item.category.map( (option, index) => (
+        <Text key={index} style={styles.categoryText}>{option}</Text>
+      ))}
+      <View style={styles.boxWrapper}>
+        <TouchableOpacity onPress={() => handleLikeStore()}>
+          {item.favorite && !like ? <Image source={require('../../Assets/Images/like.png')} /> : <Image source={require('../../Assets/Images/dislike.png')} />}
+        </TouchableOpacity>
+        <View style={styles.ratingWrapper}>
+          <Text>{item.rating}</Text>
+          <Image style={styles.ratingStar} source={require('../../Assets/Images/estrela.png')} />
         </View>
-        <Button
-          title="Ver Desconto"
-          type="outline"
-          containerStyle={styles.buttonStyle}
-          onPress={() => handleStoreDetails(item.id, 'Detalhes')}
-          titleStyle={{color: '#fff', fontWeight: 'bold', fontSize: 12}}
-          />
-      </Card>
-    ))}
-    </>
+      </View>
+      <Button
+        title="Ver Desconto"
+        type="outline"
+        containerStyle={styles.buttonStyle}
+        onPress={() => handleStoreDetails(item.id, 'Detalhes')}
+        titleStyle={{color: '#fff', fontWeight: 'bold', fontSize: 12}}
+        />
+  </Card>
+  );
+
+
+  const renderItem = ({ item }: { item: IList}) => (
+    <Item item = {item} />
+  );
+
+  return (
+    <FlatList
+        data={store}
+        renderItem={renderItem}
+        numColumns={2}
+        keyExtractor={item => item.id.toString()}
+        />
   );
 };
 
