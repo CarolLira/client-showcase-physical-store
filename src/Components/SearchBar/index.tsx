@@ -1,28 +1,8 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, TextInput, View, Keyboard, BackHandler, Platform } from 'react-native';
+import React from 'react';
+import { StyleSheet, TextInput, View, Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SearchBar: React.FC<any> = (props: any) => {
-
-
-  useEffect(() => {
-    function handleBackButtonClick() {
-        props.setSearchPhrase('');
-        Keyboard.dismiss();
-        props.setClicked(false);
-      return true;
-    }
-    if (Platform.OS === 'android'){
-      BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
-    }
-    return () => {
-      if (Platform.OS === 'android'){
-        BackHandler.removeEventListener('hardwareBackPress', handleBackButtonClick);
-      }
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <View style={styles.container}>
       <View
